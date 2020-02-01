@@ -3,6 +3,7 @@ import { ErrorHandlerService } from './errorHandler.service';
 import { ProjectService } from './project.service';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { AccountService } from './account.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [],
@@ -11,7 +12,8 @@ import { AccountService } from './account.service';
     { provide: ErrorHandler, useClass: ErrorHandlerService },
     ProjectService,
     ErrorHandlerService,
-    AccountService
+    AccountService,
+    AuthService
   ]
 })
 export class CoreModule {
