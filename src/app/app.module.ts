@@ -23,11 +23,9 @@ import { AddEditMilestoneDialogComponent } from './projects/add-edit-milestone-d
 import { ProjectListComponent } from './projects/project-list.component';
 import { CoreModule } from './core/core.module';
 import { DeleteDialogComponent } from './projects/delete-dialog/delete-dialog.component';
-import { ManageProjectsComponent } from './admin/manage-projects.component';
-import { AddProjectDialogComponent } from './admin/add-project-dialog/add-project-dialog.component';
-import { ManagePermissionsComponent } from './admin/manage-permissions/manage-permissions.component';
-import { AddProjectUserDialogComponent } from './admin/add-project-user-dialog/add-project-user-dialog.component';
 import { AdminModule } from './admin/admin.module';
+import { SigninRedirectCallbackComponent } from './home/signin-redirect-callback.component';
+import { SignoutRedirectCallbackComponent } from './home/signout-redirect-callback.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +36,8 @@ import { AdminModule } from './admin/admin.module';
     AddEditMilestoneDialogComponent,
     ProjectListComponent,
     DeleteDialogComponent,
+    SigninRedirectCallbackComponent,
+    SignoutRedirectCallbackComponent,
   ],
   imports: [
     BrowserModule,

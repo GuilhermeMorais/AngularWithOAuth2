@@ -38,4 +38,21 @@ export class AuthService {
       return userCurrent;
     });
   }
+
+  completeLogin() {
+    return this.userManger.signinRedirectCallback().then(user => {
+      this.user = user;
+      this.loginChangedSubject.next(!!user && !user.expired);
+      return user;
+    });
+  }
+
+  logout() {
+    this.userManger.signoutRedirect();
+  }
+
+  completeLogout() {
+    this.user = null;
+    return this.userManger.signoutRedirectCallback();
+  }
 }
