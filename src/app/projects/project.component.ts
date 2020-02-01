@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from '../core/project.service';
 import { AddEditMilestoneDialogComponent } from './add-edit-milestone-dialog/add-edit-milestone-dialog.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { Constants } from '../constants';
 
 @Component({
   selector: 'app-project',
@@ -70,7 +71,7 @@ export class ProjectComponent implements OnInit {
     var newMs = new Milestone();
     newMs.projectId = this.project.id;
     const dialogRef = this.dialog.open(AddEditMilestoneDialogComponent, {
-      width: '348px',
+      width: Constants.SizePopup,
       data: {
         milestone: newMs,
         milestoneStatuses: this.milestoneStatuses,
@@ -91,7 +92,7 @@ export class ProjectComponent implements OnInit {
   editMilestone(milestone: Milestone) {
     var cloned = JSON.parse(JSON.stringify(milestone));
     const dialogRef = this.dialog.open(AddEditMilestoneDialogComponent, {
-      width: '348px',
+      width: Constants.SizePopup,
       data: {
         milestone: cloned,
         milestoneStatuses: this.milestoneStatuses,
@@ -110,7 +111,7 @@ export class ProjectComponent implements OnInit {
 
   deleteMilestone(milestone: Milestone) {
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
-      width: '348px',
+      width: Constants.SizePopup,
       data: { entityName: 'Milestone', message: `Are you sure you want to delete milestone?`, target: milestone.name }
     });
     dialogRef.afterClosed().subscribe(result => {
