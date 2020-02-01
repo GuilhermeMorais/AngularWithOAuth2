@@ -23,6 +23,11 @@ import { AddEditMilestoneDialogComponent } from './projects/add-edit-milestone-d
 import { ProjectListComponent } from './projects/project-list.component';
 import { CoreModule } from './core/core.module';
 import { DeleteDialogComponent } from './projects/delete-dialog/delete-dialog.component';
+import { ManageProjectsComponent } from './admin/manage-projects.component';
+import { AddProjectDialogComponent } from './admin/add-project-dialog/add-project-dialog.component';
+import { ManagePermissionsComponent } from './admin/manage-permissions/manage-permissions.component';
+import { AddProjectUserDialogComponent } from './admin/add-project-user-dialog/add-project-user-dialog.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,7 @@ import { DeleteDialogComponent } from './projects/delete-dialog/delete-dialog.co
     ProjectComponent,
     AddEditMilestoneDialogComponent,
     ProjectListComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,8 @@ import { DeleteDialogComponent } from './projects/delete-dialog/delete-dialog.co
     MatInputModule,
     MatSelectModule,
     CoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent],
