@@ -26,6 +26,7 @@ import { DeleteDialogComponent } from './projects/delete-dialog/delete-dialog.co
 import { AdminModule } from './admin/admin.module';
 import { SigninRedirectCallbackComponent } from './home/signin-redirect-callback.component';
 import { SignoutRedirectCallbackComponent } from './home/signout-redirect-callback.component';
+import { UnauthorizedComponent } from './home/unauthorized/unauthorized.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SignoutRedirectCallbackComponent } from './home/signout-redirect-callba
     DeleteDialogComponent,
     SigninRedirectCallbackComponent,
     SignoutRedirectCallbackComponent,
+    UnauthorizedComponent,
   ],
   imports: [
     BrowserModule,

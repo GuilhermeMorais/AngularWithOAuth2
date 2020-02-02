@@ -60,7 +60,6 @@ export class AuthService {
   getAccessToken() {
     return this.userManger.getUser().then(user => {
       if (!!user && !user.expired) {
-        console.log(user.access_token);
         return user.access_token;
       } else {
         return null;
