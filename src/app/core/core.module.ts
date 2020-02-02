@@ -4,16 +4,19 @@ import { ProjectService } from './project.service';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { AccountService } from './account.service';
 import { AuthService } from './auth.service';
+import { AuthInterceptorService } from './auth-interceptor.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [],
   imports: [],
   providers: [
-    { provide: ErrorHandler, useClass: ErrorHandlerService },
-    ProjectService,
     ErrorHandlerService,
+    { provide: ErrorHandler, useClass: ErrorHandlerService },
+    AuthService,
+    ProjectService,
     AccountService,
-    AuthService
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
   ]
 })
 export class CoreModule {

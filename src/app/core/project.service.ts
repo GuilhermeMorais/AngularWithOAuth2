@@ -20,10 +20,11 @@ export class ProjectService {
   // }
 
   getProjects(): Observable<Project[]> {
-    return from(this.authService.getAccessToken().then(token => {
-      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-      return this.http.get<Project[]>(Constants.apiRoot + 'Projects', { headers: headers }).toPromise();
-    }));
+    // return from(this.authService.getAccessToken().then(token => {
+    //   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    //   return this.http.get<Project[]>(Constants.apiRoot + 'Projects', { headers: headers }).toPromise();
+    // }));
+    return this.http.get<Project[]>(Constants.apiRoot + 'Projects');
   }
 
   getProject(projectId: number): Observable<Project> {
