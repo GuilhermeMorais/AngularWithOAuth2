@@ -22,6 +22,9 @@ export class AuthService {
     };
 
     this.userManger = new UserManager(stsSettings);
+    this.userManger.events.addAccessTokenExpired(_ => {
+      this.loginChangedSubject.next(false);
+    })
   }
 
   login() {
@@ -53,6 +56,7 @@ export class AuthService {
 
   completeLogout() {
     this.user = null;
+    this.loginChangedSubject.next(false);
     return this.userManger.signoutRedirectCallback();
   }
 
