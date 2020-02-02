@@ -18,7 +18,9 @@ export class AuthService {
       redirect_uri: `${Constants.clientRoot}signin-callback`,
       scope: 'openid profile projects-api',
       response_type: 'code',
-      post_logout_redirect_uri: `${Constants.clientRoot}signout-callback`
+      post_logout_redirect_uri: `${Constants.clientRoot}signout-callback`,
+      automaticSilentRenew: true,
+      silent_redirect_uri: `${Constants.clientRoot}assets/silent-callback.html`
     };
 
     this.userManger = new UserManager(stsSettings);
