@@ -55,4 +55,16 @@ export class AuthService {
     this.user = null;
     return this.userManger.signoutRedirectCallback();
   }
+
+  //Method to get the access token to be used in the api.
+  getAccessToken() {
+    return this.userManger.getUser().then(user => {
+      if (!!user && !user.expired) {
+        console.log(user.access_token);
+        return user.access_token;
+      } else {
+        return null;
+      }
+    })
+  }
 }
